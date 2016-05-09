@@ -18,6 +18,24 @@
          <p>Calculador de salarios para nomina diaria. En fase beta de desarrollo</p>
        </div> 
       </div>
+	  
+	  <form role="form" class="form-inline">
+		<div class="form-group">
+		  <label for="ingresoSalario">Ingrese salario diario</label>
+		  <input type="number" class="form-control" id="ingresoSalario" placeholder="Ingrese salario">
+		  <label for="rotacion4x4">Seleccione dias de rotacion</label>
+		  <select class="form-control" id="rotacion4x4">
+			<option>Lun-Mar-Mie-Jue</option>
+			<option>Mar-Mie-Jue-Vie</option>
+			<option>Mie-Jue-Vie-Sab</option>
+			<option>Jue-Vie-Sab-Dom</option>
+			<option>Vie-Sab-Dom</option>
+			<option>Sab-Dom-Lun</option>
+			<option>Dom-Lun-Mar</option>
+			<option>Lun-Mar-Mie</option>
+		  </select>
+		</div>
+	  </form>
     
     	<!-- <div class="panel panel-default" style="display: none;" id="panel"> -->
       <div class="panel panel-default" id="panel">
