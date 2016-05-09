@@ -4,6 +4,86 @@
 		"selected_items":
 		[
 			[
+				"dia",
+				"diasLab"
+			],
+			[
+				"desc",
+				"descLegDomEqu_total"
+			],
+			[
+				"pu",
+				"pushMont"
+			],
+			[
+				"comp",
+				"compFDSN"
+			],
+			[
+				"aho",
+				"ahorroOrd"
+			],
+			[
+				"cr",
+				"cRotS44Noc"
+			],
+			[
+				"ti",
+				"tiempoViaje"
+			],
+			[
+				"push",
+				"pushMont"
+			],
+			[
+				"des",
+				"DescLegDomEqu"
+			],
+			[
+				"de",
+				"DescLegSabEqu"
+			],
+			[
+				"di",
+				"DiaLibre"
+			],
+			[
+				"bo",
+				"BonoNocturno"
+			],
+			[
+				"com",
+				"CompRotSem44Noc"
+			],
+			[
+				"co",
+				"CompRotSem44Diu"
+			],
+			[
+				"c",
+				"cajaAhorroD"
+			],
+			[
+				"cd",
+				"cdad"
+			],
+			[
+				"pr",
+				"PrevCompNoc"
+			],
+			[
+				"sa",
+				"salario"
+			],
+			[
+				"sal",
+				"salario"
+			],
+			[
+				"m",
+				"margin-bottom"
+			],
+			[
 				"pa",
 				"padding-bottom"
 			],
@@ -16,68 +96,20 @@
 				"text-align"
 			],
 			[
-				"dia",
-				"diaFeriado"
-			],
-			[
-				"des",
-				"descLegDomEqu_sabF"
-			],
-			[
 				"descL",
 				"descLegDomEqu_norm"
-			],
-			[
-				"desc",
-				"descLegSabEqu_dev"
-			],
-			[
-				"di",
-				"diasLab"
-			],
-			[
-				"de",
-				"descLegSabEqu_total"
-			],
-			[
-				"pr",
-				"primaDomNoc"
 			],
 			[
 				"p",
 				"prevCompNoc"
 			],
 			[
-				"co",
-				"compFDSN"
-			],
-			[
-				"c",
-				"compFDSD"
-			],
-			[
 				"dl",
 				"dlib"
 			],
 			[
-				"cr",
-				"cRotS44Noc"
-			],
-			[
 				"cR",
 				"cRotS44Diu"
-			],
-			[
-				"ti",
-				"tiempoViaje"
-			],
-			[
-				"sa",
-				"sal"
-			],
-			[
-				"sal",
-				"salDiario"
 			],
 			[
 				"das",
@@ -124,10 +156,6 @@
 				"onclick	Attr"
 			],
 			[
-				"bo",
-				"border"
-			],
-			[
 				"li",
 				"link	Tag"
 			],
@@ -171,26 +199,7 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 2459,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"contents": "/*------Variables para calulos-----------------------------------------------------------------------------------------------------------*/\nvar diasLab=0, salDiario=0, salario=0, cajaAhorroD=0, prevCompNoc=0, tiempoViaje=0, cRotS44Diu=0 cRotS44Noc=0;\nvar bonoNoc=0, diaLib=0, ahorroOrd=0, compFDSN=0, compFDSD=0 suma=0, primaDomDiu=0, primaDomNoc=0, descLegSabEqu_norm=0;\nvar descLegSabEqu_dev=0, descLegSabEqu_total=0, descLegDomEqu_dev=0, descLegDomEqu_norm=0, descLegDomEqu_sabF=0 sobTiem=0, asisPerf=0;\nvar descLegDomEqu_total=0, diaFeriado=0, gesDes=0 cumplimiento=0, diasInhab=0, stLibreDiu=0,stDescansoDiu=0, stLibreNoc=0, stDescansoNoc=0;\n/*------Variables para calulos-----------------------------------------------------------------------------------------------------------*/\n\nfunction calcRot_16_17_18(dl){\n\n}\n\nfunction calcRot_19(){\n\n}\n\nfunction calcRot_20(){\n\n}\n\nfunction calcRot_21(){\n\n}\n\nfunction calcRot_22(){\n\n}\n\nfunction calcRot_23(){\n\n}\n\n//-------------------------------------------------\n//------   Calculos   -----------------------------\n//-------------------------------------------------\nfunction PrevCompNoc(sal, cda){\n	sal = parseFloat(sal);\n	cda = parseFloat(cda);\n\n	prevCompNoc = ((sal + cda)/5.83)*0.63*11;\n}\n\nfunction TiempoViaje(sal, cda){\n	sal = parseFloat(sal);\n	cda = parseFloat(cda);\n\n	tiempoViaje = ((sal+cda)/5.83)*2.5;\n}\n\nfunction CompRotSem44Diu(sal, cda){\n	sal = parseFloat(sal);\n	cda = parseFloat(cda);\n\n	cRotS44Diu = ((sal+cda)/7)*2.41*2;\n}\n\nfunction CompRotSem44Noc(sal, cda){\n	sal = parseFloat(sal);\n	cda = parseFloat(cda);\n\n	cRotS44Noc = ((sal+cda)/5.83)*2.75*2;\n}\n\nfunction BonoNocturno(sal, cda){\n	sal = parseFloat(sal);\n	cda = parseFloat(cda);\n\n	bonoNoc = ((sal+cda)/5.83)*0.65*24;\n}\n\nfunction DiaLibre(sal, cda, dlib){\n	sal = parseFloat(sal);\n	cda = parseFloat(cda);\n\n	diaLib = sal*dlib;\n}\n\nfunction AhorroOrd(sal){\n	sal = parseFloat(sal);\n\n	ahorroOrd = (sal*7)*0.1;\n}\n\nfunction CompTraFinSemNoc(sal, cda){\n	sal = parseFloat(sal);\n	cda = parseFloat(cda);\n\n	compFDSN = ((sal+cda)/5.83)*0.63*1.5;\n}\n\nfunction CompTraFinSemDiu(sal, cda){\n	sal = parseFloat(sal);\n	cda = parseFloat(cda);\n\n	compFDSD = ((sal+cda)/7)*1.5;\n}\n\nfunction PrimaDomDiu(sal, cda){\n	sal = parseFloat(sal);\n	cda = parseFloat(cda);\n\n	primaDomDiu = ((sal+cda)/7)*2.85*12;\n}\n\nfunction PrimaDomNoc(sal, cda){\n	sal = parseFloat(sal);\n	cda = parseFloat(cda);\n\n	primaDomNoc = ((sal+cda)/5.83)*2.85*12;\n}\n\nfunction DescLegSabEqu(sal, cda){\n	sal = parseFloat(sal);\n	cda = parseFloat(cda);\n\n	descLegSabEqu_norm = ((sal+prevCompNoc+tiempoViaje+cRotS44Diu+cRotS44Noc+compFDSD+compFDSN+bonoNoc+primaDomDiu+primaDomNoc+diaLib)/diasLab)+ahorroOrd;\n	descLegSabEqu_dev = ((sal+prevCompNoc+tiempoViaje+cRotS44Diu+cRotS44Noc+compFDSD+compFDSN+bonoNoc+diaLib)/5)+ahorroOrd;\n\n	if(descLegSabEqu_norm > descLegSabEqu_dev){\n		descLegSabEqu_total = descLegSabEqu_norm;\n	}\n\n	else{\n		descLegSabEqu_total = descLegSabEqu_dev;\n	}\n}\n\nfunction DescLegDomEqu(sal, cda){\n	sal = parseFloat(sal);\n	cda = parseFloat(cda);\n\n	descLegDomEqu_dev = ((sal+prevCompNoc+tiempoViaje+cRotS44Diu+cRotS44Noc+compFDSD+compFDSN+bonoNoc+primaDomDiu+primaDomNoc+diaLib+descLegSabEqu_dev)/6)+ahorroOrd;\n	descLegDomEqu_norm = ((sal+prevCompNoc+tiempoViaje+cRotS44Diu+cRotS44Noc+compFDSD+compFDSN+bonoNoc+primaDomDiu+primaDomNoc+diaLib)/diasLab)+ahorroOrd;\n	descLegDomEqu_sabF = descLegSabEqu_dev + ahorroOrd;\n\n	if(descLegDomEqu_norm > descLegDomEqu_dev && descLegDomEqu_norm > descLegDomEqu_sabF){\n		descLegDomEqu_total = descLegDomEqu_norm;\n	}\n\n	else if(descLegDomEqu_dev > descLegDomEqu_norm && descLegDomEqu_dev > descLegDomEqu_sabF){\n		descLegDomEqu_total = descLegSabEqu_dev;\n	}\n\n	else if(descLegDomEqu_sabF > descLegDomEqu_dev && descLegDomEqu_sabF > descLegDomEqu_norm){\n		descLegDomEqu_total = descLegDomEqu_sabF;\n	}\n}\n\nfunction Dferiado(){\n	\n}",
-			"file": "js/calculos.js",
-			"file_size": 3790,
-			"file_write_time": 131072171174701060,
-			"settings":
-			{
-				"buffer_size": 3816,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "css/estilos.css",
-			"settings":
-			{
-				"buffer_size": 181,
+				"buffer_size": 2686,
 				"line_ending": "Windows"
 			}
 		},
@@ -198,7 +207,23 @@
 			"file": "js/script.js",
 			"settings":
 			{
-				"buffer_size": 432,
+				"buffer_size": 668,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "js/calculos.js",
+			"settings":
+			{
+				"buffer_size": 4889,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "css/estilos.css",
+			"settings":
+			{
+				"buffer_size": 217,
 				"line_ending": "Windows"
 			}
 		}
@@ -281,7 +306,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -290,15 +315,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2459,
+						"buffer_size": 2686,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2130,
-								2130
+								1299,
+								1299
 							]
 						],
 						"settings":
@@ -308,55 +333,83 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 702.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "js/calculos.js",
+					"file": "js/script.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3816,
+						"buffer_size": 668,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3814,
-								3814
+								359,
+								359
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
 						},
-						"translation.x": 0.0,
-						"translation.y": 2140.0,
+						"translation.x": -0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "css/estilos.css",
+					"file": "js/calculos.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 181,
+						"buffer_size": 4889,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								179,
-								179
+								906,
+								906
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": -0.0,
+						"translation.y": 2916.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "css/estilos.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 217,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								69,
+								69
 							]
 						],
 						"settings":
@@ -367,35 +420,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "js/script.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 432,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								278,
-								278
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
+					"stack_index": 3,
 					"type": "text"
 				}
 			]

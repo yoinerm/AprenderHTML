@@ -19,12 +19,20 @@
        </div> 
       </div>
 	  
-	  <form role="form" class="form-inline">
+	  <form role="form" class="form-horizontal">
 		<div class="form-group" id="formulario">
+
 		  <label for="ingresoSalario">Ingrese salario diario</label>
-		  <input type="number" class="form-control" id="ingresoSalario" placeholder="Ingrese salario">
+		  <input type="number" class="form-control spacFond" id="ingresoSalario" placeholder="Ingrese salario">
+
+      <label for="dLab">Dias efectivamente laborados</label>
+      <input type="number" class="form-control spacFond"id="dLab" placeholder="Dias laborados">
+
+      <label for="cajaAho">% de caja de ahorro</label>
+      <input type="number" class="form-control spacFond" id="cajaAho" placeholder="Caja de ahorro (%)"></input>
+
 		  <label for="rotacion4x4">Seleccione dias de rotacion</label>
-		  <select class="form-control" id="rotacion4x4">
+		  <select class="form-control spacFond" id="rotacion4x4">
 			<option>Lun-Mar-Mie-Jue</option>
 			<option>Mar-Mie-Jue-Vie</option>
 			<option>Mie-Jue-Vie-Sab</option>
@@ -37,7 +45,6 @@
 		</div>
 	  </form>
     
-    	<!-- <div class="panel panel-default" style="display: none;" id="panel"> -->
       <div class="panel panel-default" style="display: none; padding-top: 15px"  id="panel">
     		<div class="panel-heading"><h4>Desglose de ingresos</h4></div>
 
@@ -50,10 +57,7 @@
           </thead>
 
           <tbody>
-            <tr id="fila-base">
-              <!-- <td id="item">prueba</td>
-              <td id="monto">prueba2</td> -->
-            </tr>
+            <tr id="fila-base"></tr>
           </tbody>
         </table>
 
