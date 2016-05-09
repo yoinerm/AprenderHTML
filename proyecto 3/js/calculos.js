@@ -37,6 +37,8 @@ function PrevCompNoc(sal, cda){
 	cda = parseFloat(cda);
 
 	prevCompNoc = ((sal + cda)/5.83)*0.63*11;
+	alert("1");
+	push("Prevision compensatoria nocturna");
 }
 
 function TiempoViaje(sal, cda){
