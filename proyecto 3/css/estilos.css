@@ -8,3 +8,12 @@ body{
 .fila-base{
 	display: none;
 }
+
+#formulario{
+	padding-bottom: 15px;
+}
+
+#boton{
+	text-align: center;
+	padding-bottom: 15px;
+}

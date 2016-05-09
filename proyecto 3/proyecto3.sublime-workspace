@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"pa",
+				"padding-bottom"
+			],
+			[
+				"ali",
+				"align-content"
+			],
+			[
+				"te",
+				"text-align"
+			],
+			[
 				"dia",
 				"diaFeriado"
 			],
@@ -64,10 +76,6 @@
 				"sal"
 			],
 			[
-				"pa",
-				"parseFloat"
-			],
-			[
 				"sal",
 				"salDiario"
 			],
@@ -110,10 +118,6 @@
 			[
 				"for",
 				"for	for (…) {…}"
-			],
-			[
-				"ali",
-				"text-align"
 			],
 			[
 				"onc",
@@ -167,7 +171,7 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 1759,
+				"buffer_size": 2459,
 				"line_ending": "Windows"
 			}
 		},
@@ -186,7 +190,7 @@
 			"file": "css/estilos.css",
 			"settings":
 			{
-				"buffer_size": 87,
+				"buffer_size": 181,
 				"line_ending": "Windows"
 			}
 		},
@@ -194,7 +198,7 @@
 			"file": "js/script.js",
 			"settings":
 			{
-				"buffer_size": 348,
+				"buffer_size": 432,
 				"line_ending": "Windows"
 			}
 		}
@@ -277,7 +281,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -286,15 +290,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1759,
+						"buffer_size": 2459,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								578,
-								578
+								2130,
+								2130
 							]
 						],
 						"settings":
@@ -304,10 +308,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 702.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -335,7 +339,7 @@
 						"translation.y": 2140.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
@@ -344,15 +348,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 87,
+						"buffer_size": 181,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								22,
-								22
+								179,
+								179
 							]
 						],
 						"settings":
@@ -363,7 +367,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -372,15 +376,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 348,
+						"buffer_size": 432,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								279,
-								279
+								278,
+								278
 							]
 						],
 						"settings":
@@ -391,7 +395,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 2,
 					"type": "text"
 				}
 			]

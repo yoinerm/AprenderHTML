@@ -20,7 +20,7 @@
       </div>
 	  
 	  <form role="form" class="form-inline">
-		<div class="form-group">
+		<div class="form-group" id="formulario">
 		  <label for="ingresoSalario">Ingrese salario diario</label>
 		  <input type="number" class="form-control" id="ingresoSalario" placeholder="Ingrese salario">
 		  <label for="rotacion4x4">Seleccione dias de rotacion</label>
@@ -38,7 +38,7 @@
 	  </form>
     
     	<!-- <div class="panel panel-default" style="display: none;" id="panel"> -->
-      <div class="panel panel-default" style="display: none;"  id="panel">
+      <div class="panel panel-default" style="display: none; padding-top: 15px"  id="panel">
     		<div class="panel-heading"><h4>Desglose de ingresos</h4></div>
 
         <table class="table table-striped" id="tabla">
@@ -51,17 +51,19 @@
 
           <tbody>
             <tr id="fila-base">
-              <td id="item">prueba</td>
-              <td id="monto">prueba2</td>
+              <!-- <td id="item">prueba</td>
+              <td id="monto">prueba2</td> -->
             </tr>
           </tbody>
         </table>
 
     	</div><!--Panel-->
 
-      <button type="button" class="btn btn-primary" id="generar">Generar</button>
-    	<button type="button" class="btn btn-primary" id="generar2">Generar 2</button>
-     </div>
+      <div id="boton">
+        <button type="button" class="btn btn-primary btn-lg" id="generar">Generar</button>
+    	</div>
+
+     </div><!--Container-->
    
     <script src="js/jquery-2.2.3.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
