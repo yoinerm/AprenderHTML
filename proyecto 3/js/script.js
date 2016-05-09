@@ -4,6 +4,7 @@ var txt2 = "Monto total";
 	$(function(){
 		$("#generar").on("click", function(){
 			$("#tabla tbody tr:eq(0)").clone().removeClass("fila-base").appendTo("#tabla tbody");
+			$("#panel").removeAttr("style");
 		});
 
 		$("#generar2").on("click", function(){
