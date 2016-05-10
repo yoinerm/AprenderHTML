@@ -22,24 +22,80 @@ function calcRot_16_17_18(sd, dlab, cdad){
 	DescLegDomEqu(sd, cajaAhorroD);
 }
 
-function calcRot_19(){
-
+function calcRot_19(sd, dlab, cdad){
+	salario = sd * dlab;
+	cajaAhorroD = sd * (cdad/100);
+	diasLab = dlab;
+	push("Salario");
+	pushMont(salario);
+	CompTraFinSemNoc(sd, cajaAhorroD);
+	PrimaDomNoc(sd, cajaAhorroD);
+	PrevCompNoc(sd, cajaAhorroD);
+	TiempoViaje(sd, cajaAhorroD);
+	CompRotSem44Diu(sd, cajaAhorroD);
+	CompRotSem44Noc(sd, cajaAhorroD);
+	BonoNocturno(sd, cajaAhorroD);
+	DiaLibre(sd, cajaAhorroD, 1);
+	AhorroOrd(sd);
+	DescLegSabEqu(sd, cajaAhorroD);
+	DescLegDomEqu(sd, cajaAhorroD);
 }
 
-function calcRot_20(){
-
+function calcRot_20(sd, dlab, cdad){
+	salario = sd * dlab;
+	cajaAhorroD = sd * (cdad/100);
+	diasLab = dlab;
+	push("Salario");
+	pushMont(salario);
+	TiempoViaje(sd, cajaAhorroD);
+	PrimaDomNoc(sd, cajaAhorroD);
+	BonoNocturno(sd, cajaAhorroD);
+	DiaLibre(sd, cajaAhorroD, 2);
+	DescLegSabEqu(sd, cajaAhorroD);
+	DescLegDomEqu(sd, cajaAhorroD);
 }
 
-function calcRot_21(){
-
+function calcRot_21(sd, dlab, cdad){
+	salario = sd * dlab;
+	cajaAhorroD = sd * (cdad/100);
+	diasLab = dlab;
+	push("Salario");
+	pushMont(salario);
+	TiempoViaje(sd, cajaAhorroD);
+	PrimaDomDiu(sd, cajaAhorroD);
+	BonoNocturno(sd, cajaAhorroD);
+	DiaLibre(sd, cajaAhorroD, 2);
+	DescLegSabEqu(sd, cajaAhorroD);
+	DescLegDomEqu(sd, cajaAhorroD);
 }
 
-function calcRot_22(){
-
+function calcRot_22(sd, dlab, cdad){
+	salario = sd * dlab;
+	cajaAhorroD = sd * (cdad/100);
+	diasLab = dlab;
+	push("Salario");
+	pushMont(salario);
+	TiempoViaje(sd, cajaAhorroD);
+	PrevCompNoc(sd, cajaAhorroD);
+	PrimaDomDiu(sd, cajaAhorroD);
+	BonoNocturno(sd, cajaAhorroD);
+	DiaLibre(sd, cajaAhorroD, 2);
+	DescLegSabEqu(sd, cajaAhorroD);
+	DescLegDomEqu(sd, cajaAhorroD);
 }
 
-function calcRot_23(){
-
+function calcRot_23(sd, dlab, cdad){
+	salario = sd * dlab;
+	cajaAhorroD = sd * (cdad/100);
+	diasLab = dlab;
+	push("Salario");
+	pushMont(salario);
+	TiempoViaje(sd, cajaAhorroD);
+	PrevCompNoc(sd, cajaAhorroD);
+	BonoNocturno(sd, cajaAhorroD);
+	DiaLibre(sd, cajaAhorroD, 2);
+	DescLegSabEqu(sd, cajaAhorroD);
+	DescLegDomEqu(sd, cajaAhorroD);
 }
 
 //-------------------------------------------------

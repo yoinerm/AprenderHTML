@@ -4,6 +4,22 @@
 		"selected_items":
 		[
 			[
+				"pri",
+				"PrimaDomDiu"
+			],
+			[
+				"prim",
+				"PrimaDomNoc"
+			],
+			[
+				"ca",
+				"cajaAhorroD"
+			],
+			[
+				"com",
+				"CompTraFinSemNoc"
+			],
+			[
 				"dia",
 				"diasLab"
 			],
@@ -50,10 +66,6 @@
 			[
 				"bo",
 				"BonoNocturno"
-			],
-			[
-				"com",
-				"CompRotSem44Noc"
 			],
 			[
 				"co",
@@ -207,7 +219,7 @@
 			"file": "js/script.js",
 			"settings":
 			{
-				"buffer_size": 668,
+				"buffer_size": 1067,
 				"line_ending": "Windows"
 			}
 		},
@@ -215,7 +227,7 @@
 			"file": "js/calculos.js",
 			"settings":
 			{
-				"buffer_size": 4889,
+				"buffer_size": 6638,
 				"line_ending": "Windows"
 			}
 		},
@@ -306,7 +318,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -322,8 +334,8 @@
 						"selection":
 						[
 							[
-								1299,
-								1299
+								768,
+								768
 							]
 						],
 						"settings":
@@ -333,7 +345,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 162.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
@@ -345,26 +357,26 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 668,
+						"buffer_size": 1067,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								359,
-								359
+								1040,
+								1040
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
 						},
-						"translation.x": -0.0,
-						"translation.y": 0.0,
+						"translation.x": 0.0,
+						"translation.y": 126.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -373,26 +385,26 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4889,
+						"buffer_size": 6638,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								906,
-								906
+								1716,
+								1716
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
 						},
-						"translation.x": -0.0,
-						"translation.y": 2916.0,
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{

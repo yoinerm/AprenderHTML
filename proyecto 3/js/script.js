@@ -26,8 +26,13 @@ function pushMont(valor){
 
 function diaSelc(){
 	switch ($("#rotacion4x4").val()){
-		case "Lun-Mar-Mie-Jue":
-		calcRot_16_17_18(salDia, dLab, cdad);
-
+		case "Lun-Mar-Mie-Jue":	calcRot_16_17_18(salDia, dLab, cdad);
+		case "Mar-Mie-Jue-Vie": calcRot_16_17_18(salDia, dLab, cdad);
+		case "Mie-Jue-Vie-Sab": calcRot_16_17_18(salDia, dLab, cdad);
+		case "Jue-Vie-Sab-Dom": calcRot_19(salDia, dLab, cdad);
+		case "Vie-Sab-Dom": calcRot_20(salDia, dLab, cdad);
+		case "Sab-Dom-Lun": calcRot_21(salDia, dLab, cdad);
+		case "Dom-Lun-Mar": calcRot_22(salDia, dLab, cdad);
+		case "Lun-Mar-Mie": calcRot_23(salDia, dLab, cdad);
 	}
 }
