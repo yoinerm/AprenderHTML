@@ -18,6 +18,7 @@
          <p>Calculador de salarios para nomina diaria. En fase beta de desarrollo</p>
        </div> 
       </div>
+      
 	  
 	  <form role="form" class="form-horizontal">
 		<div class="form-group" id="formulario">
@@ -64,10 +65,40 @@
     	</div><!--Panel-->
 
       <div id="boton">
-        <button type="button" class="btn btn-primary btn-lg" id="generar">Generar</button>
+        <button type="button" class="btn btn-primary btn-lg" id="generar">Calcular</button>
+        <a href="#ventanasave" class="btn btn-primary btn-lg" data-toggle="modal">Guardar valores</a>
     	</div>
 
+      <div class="modal fade" id="ventanasave">
+        <div class="modal-dialog">
+          <div class="modal-content">
+
+            <div class="modal-header">
+              <button tyle="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h3 class="modal-title">Guardar parametros</h3>
+            </div>
+
+            <div class="modal-body">
+              <div class="form-group">
+                <label for="ingresoSal">Salario diario</label>
+                <input type="number" class="form-control" id="ingresoSal" placeholder="Salario diario">
+                <label for="CdA">Caja de ahorro</label>
+                <input type="number" class="form-control" id="CdA" placeholder="% Caja de ahorro">
+              </div>
+            </div>
+
+            <div class="modal-footer">
+              <button type="button" class="btn btn-success btn-lg">Guardar</button>
+            </div>
+
+          </div>
+        </div>
+        
+      </div>
+
      </div><!--Container-->
+
+     <div class="modal-fade" id="guardavalores" tabindex="-1" role="dialog"></div>
    
     <script src="js/jquery-2.2.3.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
