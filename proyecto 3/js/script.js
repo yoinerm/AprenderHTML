@@ -3,7 +3,9 @@ var txt2 = "Monto total";
 var txt3=[];
 var mont=[];
 	$(function(){
-		$("#cajaAho").val("10");
+		var parametros = cargarParametros();
+		$("#ingresoSalario").val(parametros.salLoad);
+		$("#cajaAho").val(parametros.cajaLoad);
 		$("#generar").on("click", function(){
 			salDia = $("#ingresoSalario").val();
 			dLab = $("#dLab").val();
@@ -14,6 +16,8 @@ var mont=[];
 			$("<tr><td>"+txt3[i]+"</td><td>"+mont[i]+"</td></tr>").appendTo("#tabla tbody");
 			$("#panel").removeAttr("style");}
 		});
+
+		$("#boton-guardar").on("click", guardarParametros);
 	});
 	
 function push(item){

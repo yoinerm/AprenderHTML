@@ -3,6 +3,7 @@ var diasLab=0, salDiario=0, salario=0, cajaAhorroD=0, prevCompNoc=0, tiempoViaje
 var bonoNoc=0, diaLib=0, ahorroOrd=0, compFDSN=0, compFDSD=0, suma=0, primaDomDiu=0, primaDomNoc=0, descLegSabEqu_norm=0;
 var descLegSabEqu_dev=0, descLegSabEqu_total=0, descLegDomEqu_dev=0, descLegDomEqu_norm=0, descLegDomEqu_sabF=0, sobTiem=0, asisPerf=0;
 var descLegDomEqu_total=0, diaFeriado=0, gesDes=0, cumplimiento=0, diasInhab=0, stLibreDiu=0, stDescansoDiu=0, stLibreNoc=0, stDescansoNoc=0;
+var salLoad=0, cajaLoad=0;
 /*------Variables para calulos-----------------------------------------------------------------------------------------------------------*/
 
 function calcRot_16_17_18(sd, dlab, cdad){
@@ -246,4 +247,22 @@ function DescLegDomEqu(sal, cda){
 
 	push("Descanso legal domingo equivalente");
 	pushMont(descLegDomEqu_total);
+}
+
+//---------------------------------------------------------------------------------------------------------------------------------------
+//---------- Almacenaje y retiro de datos con LocalStorage ------------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------------------------------------------
+
+function guardarParametros(){
+		var salarioGuardado = $("#ingresoSal").val();
+		var cajaAhorro = $("#CdA").val();
+		localStorage.setItem("SalDia", salarioGuardado);
+		localStorage.setItem("CajaA", cajaAhorro);
+	}
+
+
+function cargarParametros(){
+	this.salLoad = localStorage.getItem("SalDia");
+	this.cajaLoad = localStorage.getItem("CajaA");
+	return this;
 }
