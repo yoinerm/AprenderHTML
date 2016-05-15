@@ -107,6 +107,7 @@ function PrevCompNoc(sal, cda){
 	cda = parseFloat(cda);
 
 	prevCompNoc = ((sal + cda)/5.83)*0.63*11;
+
 	push("Prevision compensatoria nocturna");
 	pushMont(prevCompNoc);
 }
@@ -217,6 +218,9 @@ function DescLegSabEqu(sal, cda){
 	descLegSabEqu_norm = ((sal+prevCompNoc+tiempoViaje+cRotS44Diu+cRotS44Noc+compFDSD+compFDSN+bonoNoc+primaDomDiu+primaDomNoc+diaLib)/diasLab)+ahorroOrd;
 	descLegSabEqu_dev = ((sal+prevCompNoc+tiempoViaje+cRotS44Diu+cRotS44Noc+compFDSD+compFDSN+bonoNoc+diaLib)/5)+ahorroOrd;
 
+	console.log(descLegSabEqu_norm);
+	console.log(descLegSabEqu_dev);
+
 	if(descLegSabEqu_norm > descLegSabEqu_dev){
 		descLegSabEqu_total = descLegSabEqu_norm;
 	}
@@ -224,6 +228,7 @@ function DescLegSabEqu(sal, cda){
 	else{
 		descLegSabEqu_total = descLegSabEqu_dev;
 	}
+	console.log(descLegSabEqu_total);
 
 	push("Descanso legal sabado equivalente");
 	pushMont(descLegSabEqu_total);
@@ -237,6 +242,10 @@ function DescLegDomEqu(sal, cda){
 	descLegDomEqu_norm = ((sal+prevCompNoc+tiempoViaje+cRotS44Diu+cRotS44Noc+compFDSD+compFDSN+bonoNoc+primaDomDiu+primaDomNoc+diaLib)/diasLab)+ahorroOrd;
 	descLegDomEqu_sabF = descLegSabEqu_dev + ahorroOrd;
 
+	console.log(descLegDomEqu_dev);
+	console.log(descLegDomEqu_norm);
+	console.log(descLegDomEqu_sabF);
+
 	if(descLegDomEqu_norm > descLegDomEqu_dev && descLegDomEqu_norm > descLegDomEqu_sabF){
 		descLegDomEqu_total = descLegDomEqu_norm;
 	}
@@ -244,6 +253,7 @@ function DescLegDomEqu(sal, cda){
 	else if(descLegDomEqu_dev > descLegDomEqu_norm && descLegDomEqu_dev > descLegDomEqu_sabF){
 		descLegDomEqu_total = descLegSabEqu_dev;
 	}
+	console.log(descLegDomEqu_total);
 
 	push("Descanso legal domingo equivalente");
 	pushMont(descLegDomEqu_total);

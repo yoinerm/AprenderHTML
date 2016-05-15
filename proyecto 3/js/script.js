@@ -25,6 +25,8 @@ function push(item){
 }
 
 function pushMont(valor){
+	valor = parseFloat(valor);
+	valor = valor.toFixed(2);
 	mont.push(valor);
 }
 
