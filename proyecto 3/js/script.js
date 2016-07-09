@@ -63,4 +63,5 @@ function diaSelc(){
 		case "Lun-Mar-Mie": calcRot_23(salDia, dLab, cdad);
 		break;
 	}
+	salarioTotal();
 }

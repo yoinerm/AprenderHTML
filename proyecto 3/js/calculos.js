@@ -3,7 +3,7 @@ var diasLab=0, salDiario=0, salario=0, cajaAhorroD=0, prevCompNoc=0, tiempoViaje
 var bonoNoc=0, diaLib=0, ahorroOrd=0, compFDSN=0, compFDSD=0, suma=0, primaDomDiu=0, primaDomNoc=0, descLegSabEqu_norm=0;
 var descLegSabEqu_dev=0, descLegSabEqu_total=0, descLegDomEqu_dev=0, descLegDomEqu_norm=0, descLegDomEqu_sabF=0, sobTiem=0, asisPerf=0;
 var descLegDomEqu_total=0, diaFeriado=0, gesDes=0, cumplimiento=0, diasInhab=0, stLibreDiu=0, stDescansoDiu=0, stLibreNoc=0, stDescansoNoc=0;
-var salLoad=0, cajaLoad=0;
+var salLoad=0, cajaLoad=0, totalTotal=0;
 /*------Variables para calulos-----------------------------------------------------------------------------------------------------------*/
 
 function calcRot_16_17_18(sd, dlab, cdad){
@@ -97,6 +97,13 @@ function calcRot_23(sd, dlab, cdad){
 	DiaLibre(sd, cajaAhorroD, 2);
 	DescLegSabEqu(sd, cajaAhorroD);
 	DescLegDomEqu(sd, cajaAhorroD);
+}
+
+function salarioTotal(){
+	totalTotal = salario+prevCompNoc+tiempoViaje+cRotS44Diu+cRotS44Noc+bonoNoc+diaLib+ahorroOrd+compFDSN+
+				 compFDSD+primaDomDiu+primaDomNoc+descLegSabEqu_total+descLegDomEqu_total;
+	push("Total");
+	pushMont(totalTotal);
 }
 
 //-------------------------------------------------
@@ -218,9 +225,6 @@ function DescLegSabEqu(sal, cda){
 	descLegSabEqu_norm = ((sal+prevCompNoc+tiempoViaje+cRotS44Diu+cRotS44Noc+compFDSD+compFDSN+bonoNoc+primaDomDiu+primaDomNoc+diaLib)/diasLab)+ahorroOrd;
 	descLegSabEqu_dev = ((sal+prevCompNoc+tiempoViaje+cRotS44Diu+cRotS44Noc+compFDSD+compFDSN+bonoNoc+diaLib)/5)+ahorroOrd;
 
-	console.log(descLegSabEqu_norm);
-	console.log(descLegSabEqu_dev);
-
 	if(descLegSabEqu_norm > descLegSabEqu_dev){
 		descLegSabEqu_total = descLegSabEqu_norm;
 	}
@@ -228,7 +232,6 @@ function DescLegSabEqu(sal, cda){
 	else{
 		descLegSabEqu_total = descLegSabEqu_dev;
 	}
-	console.log(descLegSabEqu_total);
 
 	push("Descanso legal sabado equivalente");
 	pushMont(descLegSabEqu_total);
@@ -242,18 +245,17 @@ function DescLegDomEqu(sal, cda){
 	descLegDomEqu_norm = ((sal+prevCompNoc+tiempoViaje+cRotS44Diu+cRotS44Noc+compFDSD+compFDSN+bonoNoc+primaDomDiu+primaDomNoc+diaLib)/diasLab)+ahorroOrd;
 	descLegDomEqu_sabF = descLegSabEqu_dev + ahorroOrd;
 
-	console.log(descLegDomEqu_dev);
-	console.log(descLegDomEqu_norm);
-	console.log(descLegDomEqu_sabF);
-
 	if(descLegDomEqu_norm > descLegDomEqu_dev && descLegDomEqu_norm > descLegDomEqu_sabF){
 		descLegDomEqu_total = descLegDomEqu_norm;
 	}
 
 	else if(descLegDomEqu_dev > descLegDomEqu_norm && descLegDomEqu_dev > descLegDomEqu_sabF){
-		descLegDomEqu_total = descLegSabEqu_dev;
+		descLegDomEqu_total = descLegDomEqu_dev;
 	}
-	console.log(descLegDomEqu_total);
+
+	else if(descLegDomEqu_sabF > descLegDomEqu_norm && descLegDomEqu_sabF > descLegDomEqu_dev){
+		descLegDomEqu_total = descLegDomEqu_sabF;
+	}
 
 	push("Descanso legal domingo equivalente");
 	pushMont(descLegDomEqu_total);

@@ -268,11 +268,9 @@
 	},
 	"file_history":
 	[
-		"/D/Yoiner Stuff/PhoneGap/Proyecto3/plugins/www/js/index.js",
-		"/D/Yoiner Stuff/web/bot/index.html",
-		"/D/Yoiner Stuff/web/bot/css/styles.css",
 		"/D/Yoiner Stuff/web/bot/css/bootstrap.css",
 		"/D/Yoiner Stuff/web/Bootstrap/Prueba Bootstrap/index_2.html",
+		"/D/Yoiner Stuff/PhoneGap/Proyecto3/plugins/www/js/index.js",
 		"/D/Yoiner Stuff/PhoneGap/Proyecto3/plugins/www/index.html",
 		"/C/Users/ASUS/AppData/Roaming/Sublime Text 3/Packages/User/JavaScript.sublime-settings",
 		"/D/Yoiner Stuff/PhoneGap/Proyecto1/Prueba1/www/js/script.js",
@@ -297,7 +295,7 @@
 	],
 	"find":
 	{
-		"height": 34.0
+		"height": 26.0
 	},
 	"find_in_files":
 	{
@@ -370,7 +368,7 @@
 		"height": 0.0
 	},
 	"pinned_build_system": "",
-	"project": "proyecto3.sublime-project",
+	"project": "index.sublime-project",
 	"replace":
 	{
 		"height": 48.0
