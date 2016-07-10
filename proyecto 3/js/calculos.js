@@ -3,7 +3,7 @@ var diasLab=0, salDiario=0, salario=0, cajaAhorroD=0, prevCompNoc=0, tiempoViaje
 var bonoNoc=0, diaLib=0, ahorroOrd=0, compFDSN=0, compFDSD=0, suma=0, primaDomDiu=0, primaDomNoc=0, descLegSabEqu_norm=0;
 var descLegSabEqu_dev=0, descLegSabEqu_total=0, descLegDomEqu_dev=0, descLegDomEqu_norm=0, descLegDomEqu_sabF=0, sobTiem=0, asisPerf=0;
 var descLegDomEqu_total=0, diaFeriado=0, gesDes=0, cumplimiento=0, diasInhab=0, stLibreDiu=0, stDescansoDiu=0, stLibreNoc=0, stDescansoNoc=0;
-var salLoad=0, cajaLoad=0, totalTotal=0;
+var salLoad=0, cajaLoad=0, totalTotal=0, gestFijo=0;
 /*------Variables para calulos-----------------------------------------------------------------------------------------------------------*/
 
 function calcRot_16_17_18(sd, dlab, cdad){
@@ -17,6 +17,7 @@ function calcRot_16_17_18(sd, dlab, cdad){
 	CompRotSem44Diu(sd, cajaAhorroD);
 	CompRotSem44Noc(sd, cajaAhorroD);
 	BonoNocturno(sd, cajaAhorroD);
+	GestionFija(sd);
 	DiaLibre(sd, cajaAhorroD, 1);
 	AhorroOrd(sd);
 	DescLegSabEqu(sd, cajaAhorroD);
@@ -36,6 +37,7 @@ function calcRot_19(sd, dlab, cdad){
 	CompRotSem44Diu(sd, cajaAhorroD);
 	CompRotSem44Noc(sd, cajaAhorroD);
 	BonoNocturno(sd, cajaAhorroD);
+	GestionFija(sd);
 	DiaLibre(sd, cajaAhorroD, 1);
 	AhorroOrd(sd);
 	DescLegSabEqu(sd, cajaAhorroD);
@@ -51,7 +53,9 @@ function calcRot_20(sd, dlab, cdad){
 	TiempoViaje(sd, cajaAhorroD);
 	PrimaDomNoc(sd, cajaAhorroD);
 	BonoNocturno(sd, cajaAhorroD);
+	GestionFija(sd);
 	DiaLibre(sd, cajaAhorroD, 2);
+	AhorroOrd(sd);
 	DescLegSabEqu(sd, cajaAhorroD);
 	DescLegDomEqu(sd, cajaAhorroD);
 }
@@ -65,7 +69,9 @@ function calcRot_21(sd, dlab, cdad){
 	TiempoViaje(sd, cajaAhorroD);
 	PrimaDomDiu(sd, cajaAhorroD);
 	BonoNocturno(sd, cajaAhorroD);
+	GestionFija(sd);
 	DiaLibre(sd, cajaAhorroD, 2);
+	AhorroOrd(sd);
 	DescLegSabEqu(sd, cajaAhorroD);
 	DescLegDomEqu(sd, cajaAhorroD);
 }
@@ -80,7 +86,9 @@ function calcRot_22(sd, dlab, cdad){
 	PrevCompNoc(sd, cajaAhorroD);
 	PrimaDomDiu(sd, cajaAhorroD);
 	BonoNocturno(sd, cajaAhorroD);
+	GestionFija(sd);
 	DiaLibre(sd, cajaAhorroD, 2);
+	AhorroOrd(sd);
 	DescLegSabEqu(sd, cajaAhorroD);
 	DescLegDomEqu(sd, cajaAhorroD);
 }
@@ -94,14 +102,16 @@ function calcRot_23(sd, dlab, cdad){
 	TiempoViaje(sd, cajaAhorroD);
 	PrevCompNoc(sd, cajaAhorroD);
 	BonoNocturno(sd, cajaAhorroD);
+	GestionFija(sd);
 	DiaLibre(sd, cajaAhorroD, 2);
+	AhorroOrd(sd);
 	DescLegSabEqu(sd, cajaAhorroD);
 	DescLegDomEqu(sd, cajaAhorroD);
 }
 
 function salarioTotal(){
 	totalTotal = salario+prevCompNoc+tiempoViaje+cRotS44Diu+cRotS44Noc+bonoNoc+diaLib+ahorroOrd+compFDSN+
-				 compFDSD+primaDomDiu+primaDomNoc+descLegSabEqu_total+descLegDomEqu_total;
+				 compFDSD+primaDomDiu+primaDomNoc+descLegSabEqu_total+descLegDomEqu_total+gestFijo;
 	push("Total");
 	pushMont(totalTotal);
 }
@@ -113,7 +123,7 @@ function PrevCompNoc(sal, cda){
 	sal = parseFloat(sal);
 	cda = parseFloat(cda);
 
-	prevCompNoc = ((sal + cda)/5.83)*0.63*11;
+	prevCompNoc = ((sal + cda)/5.5)*0.65*11;
 
 	push("Prevision compensatoria nocturna");
 	pushMont(prevCompNoc);
@@ -123,7 +133,7 @@ function TiempoViaje(sal, cda){
 	sal = parseFloat(sal);
 	cda = parseFloat(cda);
 
-	tiempoViaje = ((sal+cda)/5.83)*2.5;
+	tiempoViaje = ((sal+cda)/5.5)*3;
 
 	push("Tiempo de viaje");
 	pushMont(tiempoViaje);
@@ -143,7 +153,7 @@ function CompRotSem44Noc(sal, cda){
 	sal = parseFloat(sal);
 	cda = parseFloat(cda);
 
-	cRotS44Noc = ((sal+cda)/5.83)*2.75*2;
+	cRotS44Noc = ((sal+cda)/5.5)*2.75*2;
 
 	push("Compensacion rotacion semana 44 horas nocturnas");
 	pushMont(cRotS44Noc);
@@ -153,7 +163,7 @@ function BonoNocturno(sal, cda){
 	sal = parseFloat(sal);
 	cda = parseFloat(cda);
 
-	bonoNoc = ((sal+cda)/5.83)*0.65*24;
+	bonoNoc = ((sal+cda)/5.5)*0.65*24;
 
 	push("Bono nocturno");
 	pushMont(bonoNoc);
@@ -163,7 +173,7 @@ function DiaLibre(sal, cda, dlib){
 	sal = parseFloat(sal);
 	cda = parseFloat(cda);
 
-	diaLib = sal*dlib;
+	diaLib = (cda+sal)*dlib;
 
 	push("Dia libre");
 	pushMont(diaLib);
@@ -178,11 +188,20 @@ function AhorroOrd(sal){
 	pushMont(ahorroOrd);
 }
 
+function GestionFija(sal){
+	sal = parseFloat(sal);
+
+	gestFijo = (sal*0.1)*7;
+
+	push("10% Gestion fija");
+	pushMont(gestFijo);
+}
+
 function CompTraFinSemNoc(sal, cda){
 	sal = parseFloat(sal);
 	cda = parseFloat(cda);
 
-	compFDSN = ((sal+cda)/5.83)*0.63*1.5;
+	compFDSN = ((sal+cda)/5.5)*0.63*1.5;
 
 	push("Compensacion trabajo fin de semana nocturno");
 	pushMont(compFDSN);
@@ -212,7 +231,7 @@ function PrimaDomNoc(sal, cda){
 	sal = parseFloat(sal);
 	cda = parseFloat(cda);
 
-	primaDomNoc = ((sal+cda)/5.83)*2.85*12;
+	primaDomNoc = ((sal+cda)/5.5)*2.85*12;
 
 	push("Prima dominical nocturna");
 	pushMont(primaDomNoc);
@@ -222,8 +241,8 @@ function DescLegSabEqu(sal, cda){
 	sal = parseFloat(sal);
 	cda = parseFloat(cda);
 
-	descLegSabEqu_norm = ((sal+prevCompNoc+tiempoViaje+cRotS44Diu+cRotS44Noc+compFDSD+compFDSN+bonoNoc+primaDomDiu+primaDomNoc+diaLib)/diasLab)+ahorroOrd;
-	descLegSabEqu_dev = ((sal+prevCompNoc+tiempoViaje+cRotS44Diu+cRotS44Noc+compFDSD+compFDSN+bonoNoc+diaLib)/5)+ahorroOrd;
+	descLegSabEqu_norm = ((salario+prevCompNoc+tiempoViaje+cRotS44Diu+cRotS44Noc+compFDSD+compFDSN+bonoNoc+gestFijo+primaDomDiu+primaDomNoc+diaLib)/diasLab)+cda;
+	descLegSabEqu_dev = ((salario+prevCompNoc+tiempoViaje+cRotS44Diu+cRotS44Noc+compFDSD+compFDSN+bonoNoc+gestFijo+diaLib)/5)+cda;
 
 	if(descLegSabEqu_norm > descLegSabEqu_dev){
 		descLegSabEqu_total = descLegSabEqu_norm;
@@ -233,6 +252,8 @@ function DescLegSabEqu(sal, cda){
 		descLegSabEqu_total = descLegSabEqu_dev;
 	}
 
+	console.log(gestFijo);
+
 	push("Descanso legal sabado equivalente");
 	pushMont(descLegSabEqu_total);
 }
@@ -241,8 +262,8 @@ function DescLegDomEqu(sal, cda){
 	sal = parseFloat(sal);
 	cda = parseFloat(cda);
 
-	descLegDomEqu_dev = ((sal+prevCompNoc+tiempoViaje+cRotS44Diu+cRotS44Noc+compFDSD+compFDSN+bonoNoc+primaDomDiu+primaDomNoc+diaLib+descLegSabEqu_dev)/6)+ahorroOrd;
-	descLegDomEqu_norm = ((sal+prevCompNoc+tiempoViaje+cRotS44Diu+cRotS44Noc+compFDSD+compFDSN+bonoNoc+primaDomDiu+primaDomNoc+diaLib)/diasLab)+ahorroOrd;
+	descLegDomEqu_dev = ((salario+prevCompNoc+tiempoViaje+cRotS44Diu+cRotS44Noc+compFDSD+compFDSN+bonoNoc+gestFijo+primaDomDiu+primaDomNoc+diaLib+descLegSabEqu_dev)/6)+cda;
+	descLegDomEqu_norm = ((salario+prevCompNoc+tiempoViaje+cRotS44Diu+cRotS44Noc+compFDSD+compFDSN+bonoNoc+gestFijo+primaDomDiu+primaDomNoc+diaLib)/diasLab)+cda;
 	descLegDomEqu_sabF = descLegSabEqu_dev + ahorroOrd;
 
 	if(descLegDomEqu_norm > descLegDomEqu_dev && descLegDomEqu_norm > descLegDomEqu_sabF){
